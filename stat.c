@@ -1,8 +1,16 @@
+/*
+ Jen Yu and Adeebur Rahman
+ Systems Programming PD 10
+ HW #08: I need information, STAT!
+ 2017-10-31
+ */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
 #include <sys/stat.h>
 
+//converts base 10 to base 8 rep
 int dec_to_oct(int num)
 {
   if (num < 8)
@@ -15,6 +23,7 @@ int dec_to_oct(int num)
     }
 }
 
+//converts base 10 to bin rep
 long dec_to_bin(int num)
 {
   if (num < 2)
@@ -77,7 +86,7 @@ int main () {
 
   printf("size of stat.c: %f %s\n", size, units[ctr]);
   printf("mode of stat.c: %d\n",sb.st_mode);
-  printf("mode of stat.c: %d\n",dec_to_oct(sb.st_mode));
+  printf("mode of stat.c (octal): %d\n",dec_to_oct(sb.st_mode));
   //printf("mode of stat.c: %s\n",get_permissions(sb.st_mode));
   printf("last accessed time of stat.c: %s\n", ctime( &sb.st_atime ) );
   return 0;
